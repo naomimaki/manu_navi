@@ -1,0 +1,46 @@
+<h2>Sign up</h2>
+
+<ul class ="entry-form">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <li class="field">
+      <%= f.label :shopName %> <br />
+      <%= f.text_field :shopname, autofocus: true %>
+    </li>
+
+    <li class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </li>
+
+    <li class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </li>
+
+    <li class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </li>
+  
+    <li class="field">
+      <%= f.label :greeting %><br />
+      <%= f.text_field :greeting, autocomplete: "off" %>
+    </li>
+    
+    <li class="shop_image">
+      <%= f.label :image %><br />
+      <%= f.file_field :image, class: 'hidden' %>
+    </li>
+    
+    <li class="actions">
+      <%= f.submit "Sign up" %>
+    </li>
+  <% end %>
+</ul>
+
+<%= render "devise/shared/links" %>

@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_081514) do
     t.string "title", null: false
     t.text "explanation", null: false
     t.integer "user_id", null: false
-    t.integer "genre_id"
+    t.integer "genre_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

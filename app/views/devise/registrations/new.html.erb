@@ -27,9 +27,10 @@
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </li>
   
-    <li class="field">
+    <li class="text_area">
+      <% simple_format(@greeting.text) %>
       <%= f.label :greeting %><br />
-      <%= f.text_field :greeting, autocomplete: "off" %>
+      <%= f.text_area :greeting, autocomplete: "off", placeholder: "お店の紹介を入力してください" %>
     </li>
     
     <li class="shop_image">
